@@ -1,9 +1,6 @@
 import { Form, Modal, Button } from "react-bootstrap";
 import { useRef } from "react";
-import {
-  useBudgets,
-  UNCATEGORIZED_BUDGET_ID,
-} from "../contexts/BudgetsContext";
+import { useBudgets } from "../contexts/BudgetsContext";
 
 export default function AddExpenseModal({
   show,
@@ -41,7 +38,7 @@ export default function AddExpenseModal({
             <Form.Control ref={descRef} type="text" required />
           </Form.Group>
           <Form.Group className="mb-3" controlId="amount">
-            <Form.Label>Max Amount</Form.Label>
+            <Form.Label>Amount</Form.Label>
             <Form.Control
               ref={amountRef}
               type="number"
@@ -52,7 +49,7 @@ export default function AddExpenseModal({
           </Form.Group>
 
           <Form.Group className="mb-3" controlId="budgetId">
-            <Form.Label>Budget</Form.Label>
+            <Form.Label>Expense</Form.Label>
             <Form.Select defaultValue={defaultBudgetId} ref={budgetIdRef}>
               <option
                 id="UNCATEGORIZED_BUDGET_ID"
@@ -69,7 +66,7 @@ export default function AddExpenseModal({
           </Form.Group>
           <div className="d-flex justify-content-end">
             <Button variant="primary" type="submit">
-              Add Budget
+              Add Expense
             </Button>
           </div>
         </Modal.Body>
